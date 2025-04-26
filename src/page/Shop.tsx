@@ -74,7 +74,7 @@ const Shop = () => {
             {keyword.length > 0 && products.length === 0 &&
                 <div className="p-4 bg-black bg-slate-200 rounded">"{keyword}" is not found</div>
             }
-            <section className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <section className="grid grid-cols-2 md:grid-cols-4 gap-4 pb-8">
                 {products.map((product) => {
                     return (
                         <ProductItem product={product} key={product.id} onDetail={() => handleDetail(product)}></ProductItem>
