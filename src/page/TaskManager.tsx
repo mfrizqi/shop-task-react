@@ -63,10 +63,10 @@ const TaskManager = () => {
 
     return (
         <section className="bg-white h-svh w-full">
-            <section className="flex flex-col items-center justify-start py-16 px-10 h-full">
+            <section className="flex flex-col items-center justify-start pt-20 px-10 h-full">
                 <div className="w-full max-w-[560px]">
-                    <h1 className="text-4xl font-bold mb-2 text-neutral-700">Task Manager</h1>
-                    <p className="mb-10 text-neutral-400">Stay organized. Get things done.</p>
+                    <h1 className="text-3xl font-bold mb-2 text-neutral-700">Task Manager</h1>
+                    <p className="mb-6 text-neutral-400">Stay organized. Get things done.</p>
                     <form onSubmit={(e) => { handleSubmit(e) }} className="mb-10">
                         <div className="flex flex-col md:flex-row justify-center">
                             <input
@@ -92,7 +92,7 @@ const TaskManager = () => {
                 </div >
 
                 {taskList.length > 0 &&
-                    <div className="flex flex-col gap-4 w-full max-w-[560px] max-h-[100%] overflow-y-auto">
+                    <div className="flex flex-col gap-4 w-full max-w-[560px] max-h-[100%] overflow-y-auto py-6">
                         {taskList.map((task) => {
                             return <TaskCard
                                 task={task}
@@ -105,7 +105,7 @@ const TaskManager = () => {
                 }
                 {taskList.length === 0 &&
                     <div className="flex flex-col gap-4 w-full max-w-[560px] max-h-[100%]">
-                            <div className="text-center p-4 bg-slate-100 rounded text-slate-500">All tasks done!</div>
+                        <div className="text-center p-4 bg-slate-100 rounded text-slate-500">All tasks done!</div>
                     </div>
                 }
             </section>

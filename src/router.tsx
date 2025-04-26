@@ -4,6 +4,7 @@ import { ProtectedRoute } from "./auths/auth";
 import Register from "./page/Register";
 import Login from "./page/Login";
 import TaskManager from "./page/TaskManager";
+import NotFound from "./page/NotFound";
 
 const router = createBrowserRouter([
     {
@@ -29,7 +30,7 @@ const router = createBrowserRouter([
     },
     {
         path:'*',
-        element: <div>Page Not Found</div>
+        element: <NotFound></NotFound>
     }
 ]);
 
