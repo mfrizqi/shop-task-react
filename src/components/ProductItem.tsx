@@ -11,7 +11,7 @@ const ProductItem = ({ product, onDetail }: ProductProps) => {
             </div>
             <div>
                 <div>{product.title}</div>
-                <div>{product.price}</div>
+                <div>${product.price}</div>
             </div>
             <button className="w-full rounded py-2 bg-emerald-600 text-white cursor-pointer">Add to cart</button>
         </div>
