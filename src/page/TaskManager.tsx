@@ -56,11 +56,6 @@ const TaskManager = () => {
         }
     }
 
-    useEffect(() => {
-        console.log(taskList)
-    },
-        [taskList])
-
     return (
         <section className="bg-white h-svh w-full">
             <section className="flex flex-col items-center justify-start pt-20 px-10 h-full">

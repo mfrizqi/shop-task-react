@@ -10,7 +10,6 @@ const Profile = () => {
 
     useEffect(() => {
         const loginData = JSON.parse(localStorage.getItem('loginData') || '{}')
-        console.log(loginData)
         setProfileData({
             fullname: loginData.fullname,
             email: loginData.email,
