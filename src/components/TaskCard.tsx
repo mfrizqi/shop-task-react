@@ -21,8 +21,8 @@ const TaskCard = ({ task, toggleComplete, onDelete }: TaskProps) => {
                     {task.title}
                 </div>
             </div>
-            <div className="p-2 bg-slate-200 rounded">
-                <img onClick={() => { onDelete(task.id) }} className="cursor-pointer opacity-60" src="./src/assets/icon/bin-2.svg" width={20} height={20} />
+            <div className="p-2 rounded">
+                <img onClick={() => { onDelete(task.id) }} className="cursor-pointer opacity-70" src="./src/assets/icon/bin-2.svg" width={20} height={20} />
             </div>
         </div>
     )
