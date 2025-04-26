@@ -2,7 +2,7 @@ import { FormEvent, useEffect, useState } from "react"
 import ProductItem from "../components/ProductItem"
 import { Product } from "../types"
 import Drawer from "../components/Drawer"
-import { emptyDetail } from "../Constants"
+import { emptyDetail } from "../constants"
 
 
 const Shop = () => {
@@ -14,6 +14,9 @@ const Shop = () => {
 
     const searchProduct = (event: FormEvent) => {
         event.preventDefault()
+        console.log(keyword)
+        console.log(originProduct)
+        setOriginProduct(products)
     }
 
     const fetchProductsData = () => {
