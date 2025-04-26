@@ -45,6 +45,7 @@ const Header = () => {
     }, [cart])
 
     const onCartClose = ()=>{
+        document.body.style.overflow = 'auto'
         setShowCartDrawer(false)
     }
 
