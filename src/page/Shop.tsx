@@ -4,7 +4,6 @@ import { Product } from "../types"
 import Drawer from "../components/Drawer"
 import { emptyDetail } from "../constants"
 
-
 const Shop = () => {
     const [products, setProducts] = useState<Product[]>([])
     const [originProduct, setOriginProduct] = useState<Product[]>(products)

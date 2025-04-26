@@ -1,6 +1,6 @@
 import { Product } from "./types";
 
-export const emptyDetail : Product = {
+export const emptyDetail: Product = {
     id: '',
     category: '',
     image: '',
@@ -9,3 +9,12 @@ export const emptyDetail : Product = {
     rating: {},
     title: ''
 }
+
+export const dummyUserDatas = [
+    {
+        fullname: 'Admin Shop Task',
+        email: 'adminshoptask@mail.com',
+        password: 'adminshop',
+        account: 'Admin'
+    }
+]

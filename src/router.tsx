@@ -1,42 +1,44 @@
-import { createBrowserRouter, RouterProvider } from "react-router";
+import { createBrowserRouter, Navigate, RouterProvider } from "react-router";
 import { ProtectedRoute } from "./auths/auth";
 
 import Register from "./page/Register";
 import Login from "./page/Login";
 import TaskManager from "./page/TaskManager";
-import NotFound from "./page/NotFound";
 import Shop from "./page/Shop";
+import Profile from "./page/Profile";
+import Header from "./components/Header";
 
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <TaskManager/>,
+        element: <TaskManager />,
 
     },
     {
         path: "/shop",
-        element: <Shop/>,
+        element: <Shop />,
 
     },
     {
         path: 'auth/register',
-        element: <Register/>
+        element: <Register />
     },
     {
         path: 'auth/login',
-        element: <Login/>
+        element: <Login />
     },
     {
         path: '/app',
         element: (
             <ProtectedRoute>
-                <div>Profile user</div>
+                <Header />
+                <Profile />
             </ProtectedRoute>
         )
     },
     {
-        path:'*',
-        element: <NotFound></NotFound>
+        path: '*',
+        element: (<Navigate to="/" replace />)
     }
 ]);
 

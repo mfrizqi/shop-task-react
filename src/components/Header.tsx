@@ -6,9 +6,15 @@ const Header = () => {
     const currentRoute = window.location.pathname;
     const [hideHeader, setHideHeader] = useState(false)
     const [showCart, setShowCart] = useState(false)
+    const [showAccount, setShowAccount] = useState(true)
+
+    const logout = ()=>{
+        localStorage.removeItem('tokenLogin')
+        localStorage.removeItem('loginData')
+        window.location.href = '/'
+    }
 
     useEffect(() => {
-        console.log(currentRoute)
         if (currentRoute.includes('/auth')) {
             setHideHeader(true)
         } else {
@@ -20,7 +26,12 @@ const Header = () => {
         } else {
             setShowCart(false)
         }
-        
+
+        if (currentRoute.includes('/app')) {
+            setShowAccount(false)
+        } else {
+            setShowAccount(true)
+        }
     }, [currentRoute])
 
     return (
@@ -35,9 +46,15 @@ const Header = () => {
             </div>
             <div className="flex items-center gap-4">
                 {showCart && <img src={cartIcon} alt="" />}
-                <a href="/auth/login" className="font-semibold text-slate-600 hover:text-emerald-500 transition-all">
-                    Account
-                </a>
+                {showAccount &&
+                    <a href="/auth/login" className="font-semibold text-slate-600 hover:text-emerald-500 transition-all">
+                        Account
+                    </a>
+                }
+                {!showAccount && 
+                <div onClick={logout} className="font-semibold text-slate-600 hover:text-emerald-500 transition-all cursor-pointer">
+                    Logout
+                </div>}
             </div>
         </section>
     )
