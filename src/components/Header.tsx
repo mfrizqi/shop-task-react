@@ -44,6 +44,10 @@ const Header = () => {
         setCartItems(cart.length)
     }, [cart])
 
+    const onCartClose = ()=>{
+        setShowCartDrawer(false)
+    }
+
     return (
         <section className={`absolute top-0 left-0 right-0 w-full flex justify-between px-4 py-4 border-b border-slate-300 bg-white ${hideHeader ? 'hidden' : ''}`}>
             <div className='flex gap-4'>
@@ -70,7 +74,7 @@ const Header = () => {
                     </div>}
             </div>
             {showCartDrawer &&
-                <CartDrawer onDrawerClose={() => { setShowCartDrawer(false) }}></CartDrawer>
+                <CartDrawer onDrawerClose={() => { onCartClose()}}></CartDrawer>
             }
         </section>
     )

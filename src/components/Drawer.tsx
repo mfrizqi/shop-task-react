@@ -48,8 +48,12 @@ const CartDrawer = ({ onDrawerClose }: { onDrawerClose: () => void }) => {
         const sum = cart.reduce((accumulator: any, currentObject: any) => {
             return accumulator + currentObject.price;   
         }, 0);
-        return sum
+        return sum.toFixed(2)
     }
+
+    useEffect(() => {
+        document.body.style.overflow = 'hidden'
+    }, [])
 
     return (
         <section className="h-full fixed top-0 botton-0 right-0 z-[4] flex flex-col md:flex-row w-full">
@@ -69,6 +73,7 @@ const CartDrawer = ({ onDrawerClose }: { onDrawerClose: () => void }) => {
                         }
                     </div>
                     {cart.length === 0 && <div className="bg-slate-100 text-slate-400 text-center p-4 rounded">Your cart is empty</div>}
+                    <div className="max-h-[300px] overflow-auto">
                     {cart.map((item) => (
                         <div key={item.id} className="mb-2 flex justify-between gap-4">
                             <div className="flex gap-4 items-center">
@@ -81,6 +86,7 @@ const CartDrawer = ({ onDrawerClose }: { onDrawerClose: () => void }) => {
                             <button onClick={() => removeFromCart(item.id)} className="inline rounded p-1 bg-slate-200 text-slate-500 cursor-pointer hover:bg-slate-300 hover:text-slate-600 transition-all">Remove</button>
                         </div>
                     ))}
+                    </div>
 
                     {cart.length > 0 &&
                         <section className="flex border-t border-slate-200 pt-4">
