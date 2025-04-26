@@ -23,10 +23,17 @@ export type Product = {
 
 export type ProductProps = {
     product: Product,
-    onDetail: any
+    onDetail: (product: Product) => void
 }
 
 export type ProductDetailProps = {
     product: Product
-    onDrawerClose: any
+    onDrawerClose: () => void
 }
+
+export type CartStore = {
+    cart: Product[];
+    addToCart: (product: Product) => void;
+    removeFromCart: (productId: string) => void;
+    clearCart: () => void
+};

@@ -1,7 +1,16 @@
-import { ProductProps } from "../types"
+import useCartStore from "../store/cartStore";
+import { Product, ProductProps } from "../types"
 
 const ProductItem = ({ product, onDetail }: ProductProps) => {
-    const handleClick = ()=>{
+
+    const addToCart = useCartStore((state) => state.addToCart);
+
+    const handleAdd = (event: React.MouseEvent<Element, MouseEvent>, product: Product) => {
+        event.stopPropagation()
+        addToCart(product)
+    }
+
+    const handleClick = () => {
         onDetail(product)
     }
     return (
@@ -13,7 +22,7 @@ const ProductItem = ({ product, onDetail }: ProductProps) => {
                 <div>{product.title}</div>
                 <div>${product.price}</div>
             </div>
-            <button className="w-full rounded py-2 bg-emerald-600 text-white cursor-pointer">Add to cart</button>
+            <button className="w-full rounded py-2 bg-emerald-600 text-white cursor-pointer hover:bg-emerald-600/90" onClick={(e) => handleAdd(e, product)}>Add to cart</button>
         </div>
     )
 }
