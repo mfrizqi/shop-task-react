@@ -1,4 +1,4 @@
-import { FormEvent, useEffect, useState } from "react";
+import { FormEvent, useState } from "react";
 import TaskCard from "../components/TaskCard";
 import { v4 as uuidv4 } from 'uuid';
 import { task } from "../types";
