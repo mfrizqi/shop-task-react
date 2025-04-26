@@ -1,54 +1,58 @@
-# React + TypeScript + Vite
+# Shop Task React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a website developed in React + Typescript + Vite and deployed to vercel
 
-Currently, two official plugins are available:
+inside the website's consist of :
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. Task Manager [Task Manager Page](https://shop-task-react.vercel.app/)
+2. E-Commerce [E-commerce page](https://shop-task-react.vercel.app/shop)
+3. Account Authentication [login page](https://shop-task-react.vercel.app/login)
 
-## Expanding the ESLint configuration
+For deployed website you can visit here : https://shop-task-react.vercel.app/
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Installation step
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Simply go to the directory and run these npm command to install and run the apps
 
 ```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+  npm run i
+  npm run dev
 ```
+
+## Task Manager
+<img src="public/image.png" alt="drawing" width="500"/>
+
+This is a simple task manager where we can manage task that needs to be done by typing to the input and submit to the list
+
+On the task list, we can check if we complete the task and also delete it if the task is needed to be removed
+
+## E-Commerce
+
+A simple e-commerce page to display various products that i've fetched using https://fakestoreapi.com/
+
+On this page, we can see the detail of the product, search the product and look up on the cart after we select one or several products
+
+<img src="public/image-1.png" alt="drawing" width="500"/>
+<img src="public/image-2.png" alt="drawing" width="500"/>
+<img src="public/image-6.png" alt="drawing" width="500"/>
+
+I implement a simple store using [Zustand](https://zustand-demo.pmnd.rs/) to manage data flow easily from display to our cart
+
+## Account Authentication
+
+In account authentication, i'm using localstorage to manage user data for register and login
+
+simply make login credential as a token and it allows us to access profile page.
+if token is not available, it'll throw us to the Task Manager Page
+
+I've already make one dummy user for login, feel free to use it to login
+
+```js
+  email: adminshoptask@mail.com
+  password: adminshop
+```
+
+<img src="public/image-3.png" alt="drawing" width="500"/>
+<img src="public/image-4.png" alt="drawing" width="500"/>
+<img src="public/image-5.png" alt="drawing" width="500"/>
