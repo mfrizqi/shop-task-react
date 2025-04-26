@@ -1,7 +1,7 @@
 const Register = () => {
     return (
         <>
-            <section className="h-svh w-full flex justify-center bg-slate-100">
+            <section className="h-svh w-full flex justify-center bg-slate-100 px-8">
                 <div className="flex flex-col flex-1 justify-center px-6 py-12 rounded-lg my-16">
                     <div className="sm:mx-auto sm:w-full sm:max-w-sm">
                         <a href="/" className="block mb-8 text-gray-400 text-sm cursor-pointer">← Back to home</a>

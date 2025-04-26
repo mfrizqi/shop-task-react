@@ -9,7 +9,7 @@ const TaskManager = () => {
         {
             id: '647bf992-1698-488c-973a-d348caa542d2',
             title: 'Fry the egg',
-            checked: true,
+            checked: false,
             created_at: new Date().toLocaleString()
         },
         {

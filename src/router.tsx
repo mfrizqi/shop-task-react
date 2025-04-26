@@ -5,11 +5,17 @@ import Register from "./page/Register";
 import Login from "./page/Login";
 import TaskManager from "./page/TaskManager";
 import NotFound from "./page/NotFound";
+import Shop from "./page/Shop";
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <TaskManager/>,
+
+    },
+    {
+        path: "/shop",
+        element: <Shop/>,
 
     },
     {
