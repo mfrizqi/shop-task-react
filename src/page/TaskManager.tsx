@@ -7,19 +7,19 @@ const TaskManager = () => {
 
     const [taskList, setTaskList] = useState<task[]>([
         {
-            id: '647bf992-1698-488c-973a-d348caa542d2',
+            id: uuidv4(),
             title: 'Fry the egg',
             checked: false,
             created_at: new Date().toLocaleString()
         },
         {
-            id: '7b5a7559-4462-4dfa-96cc-45928e8a5c26',
+            id: uuidv4(),
             title: 'Meetup friends',
             checked: false,
             created_at: new Date().toLocaleString()
         },
         {
-            id: '06582072-b649-4b9b-8914-c86a9830d18f',
+            id: uuidv4(),
             title: 'Lawn the yard',
             checked: false,
             created_at: new Date().toLocaleString()
