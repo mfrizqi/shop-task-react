@@ -1,5 +1,6 @@
 import Checkbox from "./Checkbox";
 import { task } from "../types";
+import delete_bin from '../assets/icon/bin-2.svg'
 
 type TaskProps = {
     task: task,
@@ -22,7 +23,7 @@ const TaskCard = ({ task, toggleComplete, onDelete }: TaskProps) => {
                 </div>
             </div>
             <div className="p-2 rounded">
-                <img onClick={() => { onDelete(task.id) }} className="cursor-pointer opacity-70" src="./src/assets/icon/bin-2.svg" width={20} height={20} />
+                <img onClick={() => { onDelete(task.id) }} className="cursor-pointer opacity-70" src={delete_bin} width={20} height={20} />
             </div>
         </div>
     )
