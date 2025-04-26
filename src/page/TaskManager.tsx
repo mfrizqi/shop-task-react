@@ -1,12 +1,7 @@
 import { FormEvent, useEffect, useState } from "react";
 import TaskCard from "../components/TaskCard";
 import { v4 as uuidv4 } from 'uuid';
-
-type task = {
-    id: string,
-    title: string,
-    checked: boolean
-}
+import { task } from "../types";
 
 const TaskManager = () => {
 
@@ -14,17 +9,20 @@ const TaskManager = () => {
         {
             id: '647bf992-1698-488c-973a-d348caa542d2',
             title: 'Fry the egg',
-            checked: true
+            checked: true,
+            created_at: new Date().toLocaleString()
         },
         {
             id: '7b5a7559-4462-4dfa-96cc-45928e8a5c26',
             title: 'Meetup friends',
-            checked: false
+            checked: false,
+            created_at: new Date().toLocaleString()
         },
         {
             id: '06582072-b649-4b9b-8914-c86a9830d18f',
             title: 'Lawn the yard',
-            checked: false
+            checked: false,
+            created_at: new Date().toLocaleString()
         },
     ])
     const [task, setTask] = useState("")
@@ -46,10 +44,12 @@ const TaskManager = () => {
     const handleSubmit = (event: FormEvent) => {
         event.preventDefault()
         if (task.length > 0) {
+            const now = new Date().toLocaleString()
             const newTask: task = {
                 id: uuidv4(),
                 title: task,
-                checked: false
+                checked: false,
+                created_at: now
             }
             setTaskList([...taskList, newTask])
             setTask("")

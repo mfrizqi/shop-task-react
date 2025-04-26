@@ -1,12 +1,6 @@
 import Checkbox from "./Checkbox";
-import { task } from "../types";
+import { TaskProps } from "../types";
 import delete_bin from '../assets/icon/bin-2.svg'
-
-type TaskProps = {
-    task: task,
-    onDelete: any,
-    toggleComplete: any
-}
 
 const TaskCard = ({ task, toggleComplete, onDelete }: TaskProps) => {
 
@@ -18,8 +12,11 @@ const TaskCard = ({ task, toggleComplete, onDelete }: TaskProps) => {
         <div className="p-3 bg-slate-100 border border-slate-200 flex items-center justify-between w-full rounded">
             <div className="flex">
                 <Checkbox onChange={handleCheck} checked={task.checked} />
-                <div className={`line-clamp-2 ${task.checked ? 'opacity-30' : ''}`}>
-                    {task.title}
+                <div>
+                    <div className={`line-clamp-2 ${task.checked ? 'opacity-30' : ''}`}>
+                        {task.title}
+                    </div>
+                    <div className={`text-xs text-slate-400 ${task.checked ? 'opacity-30' : ''}`}>{task.created_at}</div>
                 </div>
             </div>
             <div className="p-2 rounded">
